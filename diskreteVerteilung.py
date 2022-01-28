@@ -82,24 +82,24 @@ def binomfunc():
 
 def poissonfunc():
     k = int(input("k:"))
-    mu = float(input("mu:"))
+    lam = float(input("lam:"))
 
     eingabe = input("Poisson: Für k bitte gleich, höchstens oder mindestens eingeben: ")
 
     if eingabe == "gleich":
-        print(poisson.pmf(k, mu))
+        print(poisson.pmf(k, lam))
     elif eingabe == "höchstens":
-        print(poisson.cdf(k, mu))
+        print(poisson.cdf(k, lam))
     elif eingabe == "mindestens":
-        print(1 - poisson.cdf(k - 1, mu))
+        print(1 - poisson.cdf(k - 1, lam))
     else:
         print("Ungültige Eingabe!")
         return
 
-    print("Median: ", poisson.median(mu))
-    print("Mean: ", poisson.mean(mu))
-    print("Variance: ", poisson.var(mu))
-    print("Standard Deviation: ", poisson.std(mu))
+    print("Median: ", poisson.median(lam))
+    print("Mean: ", poisson.mean(lam))
+    print("Variance: ", poisson.var(lam))
+    print("Standard Deviation: ", poisson.std(lam))
 
 
 s = input("Verteilung: binom, geom oder poisson: ")
